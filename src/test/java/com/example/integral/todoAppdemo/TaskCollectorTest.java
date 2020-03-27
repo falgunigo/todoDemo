@@ -15,14 +15,18 @@ class TaskCollectorTest {
   TaskCollector taskCollector;
 
   @Test
-  void testTest() {
+  void whenAddTasks_thenCollectorIsNotEmpty() {
     ToDoTask aTask = new ToDoTask("task", LocalDateTime.now());
+    ToDoTask simpleTask = new ToDoTask("simple Task", LocalDateTime.now());
 
-    assertTrue(true);
+    taskCollector.add(aTask);
+    taskCollector.add(simpleTask);
+
+    assertEquals(2, taskCollector.getAllTasks());
   }
 
   @Test
-  void whenAddTasks_thenCollectorIsNotEmpty() {
+  void whenRequestTasks_thenReturnAllTasks() {
 
   }
 }
