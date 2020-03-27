@@ -10,4 +10,6 @@ public class TodoAppDemoApplication {
 		SpringApplication.run(TodoAppDemoApplication.class, args);
 	}
 
+	void run(String... args){
+	}
 }
