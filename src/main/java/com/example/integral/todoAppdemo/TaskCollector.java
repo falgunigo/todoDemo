@@ -5,13 +5,17 @@ import java.util.List;
 
 public class TaskCollector {
 
-  List<ToDoTask> taskList = new ArrayList<>();
+  private List<ToDoTask> taskList = new ArrayList<>();
 
   public void add(ToDoTask aTask) {
     taskList.add(aTask);
   }
 
-  public Integer getAllTasks() {
+  public Integer getTaskCount() {
     return taskList.size();
+  }
+
+  public List<ToDoTask> getAllTasks() {
+    return taskList;
   }
 }
