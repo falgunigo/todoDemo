@@ -11,10 +11,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class TaskCollectorTest {
 
-  @Autowired
+//  Keep test simple free of dependencies preferrably.
   TaskCollector taskCollector;
 
   private ToDoTask aTask;
@@ -22,15 +22,11 @@ class TaskCollectorTest {
 
   @BeforeEach
   void setUp() {
+    taskCollector = new TaskCollector();
     aTask = new ToDoTask("task", LocalDateTime.now());
     simpleTask = new ToDoTask("simple Task", LocalDateTime.now());
 
   }
-//
-//  @AfterEach
-//  void tearDown() {
-//    taskCollector = null;
-//  }
 
   @Test
   void whenAddTasks_thenCollectorIsNotEmpty() {
@@ -38,6 +34,7 @@ class TaskCollectorTest {
     taskCollector.add(simpleTask);
 
     assertTrue(taskCollector.getTaskCount() > 0);
+    assertEquals(2, taskCollector.getTaskCount());
   }
 
   @Test
