@@ -18,4 +18,8 @@ public class TaskCollector {
   public List<ToDoTask> getAllTasks() {
     return taskList;
   }
+
+  public void removeTask(ToDoTask aTask) {
+//    taskList.
+  }
 }
