@@ -40,4 +40,8 @@ public class TaskCollector {
   public ToDoTask getTaskByID(int taskID) {
     return taskMap.get(taskID);
   }
+
+  public void removeTask(ToDoTask aTask) {
+//    taskList.
+  }
 }
