@@ -1,0 +1,13 @@
+package com.example.integral.todoAppdemo;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+
+  @Bean
+  public TaskCollector taskCollector(){
+    return new TaskCollector();
+  }
+}
