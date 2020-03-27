@@ -1,7 +1,7 @@
 package com.example.integral.todoAppdemo;
 
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ToDoTask {
 
-  String name;
-  LocalDateTime created;
+  private String name;
+  private Instant created;
 }
