@@ -1,5 +1,6 @@
 package com.example.integral.todoAppdemo;
 
+import com.example.integral.todoAppdemo.model.ToDoTask;
 import java.time.LocalDateTime;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

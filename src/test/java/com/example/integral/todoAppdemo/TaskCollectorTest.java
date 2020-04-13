@@ -2,6 +2,7 @@ package com.example.integral.todoAppdemo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.example.integral.todoAppdemo.model.ToDoTask;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
@@ -10,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 class TaskCollectorTest {
 
-//  Keep test simple free of dependencies preferably.
+  //  Keep test simple free of dependencies preferably.
   TaskCollector taskCollector;
 
   private ToDoTask aTask;
@@ -52,8 +53,12 @@ class TaskCollectorTest {
   void whenDeleteTask_thenListSizeDecreases() {
     assertEquals(2, taskCollector.getTaskCount());
 
+    int originalTaskCount = taskCollector.getTaskCount();
+
     taskCollector.removeTask(0);
 
-    assertEquals(1, taskCollector.getTaskCount());
+    int finalTaskCount = taskCollector.getTaskCount();
+
+    assertEquals(originalTaskCount-1, finalTaskCount);
   }
 }
