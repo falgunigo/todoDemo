@@ -1,25 +1,34 @@
 package com.example.integral.todoAppdemo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TaskCollector {
 
-  private List<ToDoTask> taskList = new ArrayList<>();
+  private static Integer index = 0;
+  private Map<Integer, ToDoTask> taskMap = new HashMap<>();
 
   public void add(ToDoTask aTask) {
-    taskList.add(aTask);
+    taskMap.put(index++, aTask);
   }
 
   public Integer getTaskCount() {
-    return taskList.size();
+    return taskMap.size();
   }
 
   public List<ToDoTask> getAllTasks() {
-    return taskList;
+    return new ArrayList(taskMap.values());
   }
 
-  public void removeTask(ToDoTask aTask) {
-//    taskList.
+  public void removeTask(int taskIndex) {
+    taskMap.remove(taskIndex);
+    index--;
+  }
+
+  public void clear() {
+    taskMap.clear();
+    index = 0;
   }
 }
