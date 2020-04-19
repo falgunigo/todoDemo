@@ -10,12 +10,17 @@ public class ToDoTask {
   private String name;
   private LocalDateTime created;
   private LocalDateTime lastEdit;
-  private static Integer IDCounter=0;
+  private static Integer IDCounter = 0;
   private Integer ID;
 
   public ToDoTask(String task, LocalDateTime created) {
     this.name = task;
     this.created = created;
     this.ID = IDCounter++;
+  }
+
+  public void editName(String newName) {
+    this.lastEdit = LocalDateTime.now();
+    this.name = newName;
   }
 }

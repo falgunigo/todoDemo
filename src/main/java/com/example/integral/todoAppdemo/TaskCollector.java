@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class TaskCollector {
 
-  private static Integer index = 0;
   private Map<Integer, ToDoTask> taskMap = new HashMap<>();
 
   public void add(ToDoTask aTask) {
@@ -36,5 +35,9 @@ public class TaskCollector {
     System.out.println("Printing Task Map");
     taskMap.entrySet().stream()
         .forEach(item -> System.out.println(item.getKey() + item.getValue().getName()));
+  }
+
+  public ToDoTask getTaskByID(int taskID) {
+    return taskMap.get(taskID);
   }
 }

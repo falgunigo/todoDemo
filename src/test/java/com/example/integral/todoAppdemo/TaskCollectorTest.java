@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.example.integral.todoAppdemo.model.ToDoTask;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -57,5 +58,15 @@ class TaskCollectorTest {
 
     int finalTaskCount = taskCollector.getTaskCount();
     assertEquals(originalTaskCount - 1, finalTaskCount);
+  }
+
+  @Test
+  void whenEditTask_thenEditDateIsAddedAndAfterCreatedDate() {
+
+    ToDoTask taskToEdit = taskCollector.getTaskByID(aTask.getID());
+    taskToEdit.editName("Now I am an edited task");
+
+    assertTrue(Objects.nonNull(taskToEdit.getLastEdit()));
+    assertTrue(taskToEdit.getLastEdit().isAfter(taskToEdit.getCreated()));
   }
 }
