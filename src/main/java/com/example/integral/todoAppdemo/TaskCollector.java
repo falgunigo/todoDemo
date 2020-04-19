@@ -12,7 +12,7 @@ public class TaskCollector {
   private Map<Integer, ToDoTask> taskMap = new HashMap<>();
 
   public void add(ToDoTask aTask) {
-    taskMap.put(index++, aTask);
+    taskMap.put(aTask.getID(), aTask);
   }
 
   public Integer getTaskCount() {
@@ -23,13 +23,18 @@ public class TaskCollector {
     return new ArrayList(taskMap.values());
   }
 
-  public void removeTask(int taskIndex) {
-    taskMap.remove(taskIndex);
-    index--;
+  public void removeTask(ToDoTask aTask) {
+    Integer ID = aTask.getID();
+    taskMap.remove(ID);
   }
 
   public void clear() {
     taskMap.clear();
-    index = 0;
+  }
+
+  private void printTaskMap() {
+    System.out.println("Printing Task Map");
+    taskMap.entrySet().stream()
+        .forEach(item -> System.out.println(item.getKey() + item.getValue().getName()));
   }
 }

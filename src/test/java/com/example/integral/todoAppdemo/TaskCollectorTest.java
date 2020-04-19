@@ -51,14 +51,11 @@ class TaskCollectorTest {
 
   @Test
   void whenDeleteTask_thenListSizeDecreases() {
-    assertEquals(2, taskCollector.getTaskCount());
-
     int originalTaskCount = taskCollector.getTaskCount();
 
-    taskCollector.removeTask(0);
+    taskCollector.removeTask(aTask);
 
     int finalTaskCount = taskCollector.getTaskCount();
-
-    assertEquals(originalTaskCount-1, finalTaskCount);
+    assertEquals(originalTaskCount - 1, finalTaskCount);
   }
 }
