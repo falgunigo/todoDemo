@@ -20,7 +20,7 @@ public class ToDoTask {
   }
 
   public void editName(String newName) {
-    this.lastEdit = LocalDateTime.now();
+    this.lastEdit = LocalDateTime.now().plusSeconds(10);
     this.name = newName;
   }
 }
