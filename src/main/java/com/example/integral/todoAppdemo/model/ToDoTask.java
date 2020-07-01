@@ -21,6 +21,7 @@ public class ToDoTask {
 
   public void editName(String newName) {
     this.lastEdit = LocalDateTime.now().plusSeconds(10);
+    // This was done because CircleCI is super fast?
     this.name = newName;
   }
 }

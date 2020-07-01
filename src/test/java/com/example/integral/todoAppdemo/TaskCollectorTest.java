@@ -66,6 +66,7 @@ class TaskCollectorTest {
     ToDoTask taskToEdit = taskCollector.getTaskByID(aTask.getID());
     taskToEdit.editName("Now I am an edited task");
 
+    //mock
     assertTrue(Objects.nonNull(taskToEdit.getLastEdit()));
     assertTrue(taskToEdit.getLastEdit().isAfter(taskToEdit.getCreated()));
   }
