@@ -31,6 +31,8 @@ class TaskCollectorTest {
 
   @AfterEach
   void tearDown() {
+    aTask = null;
+    simpleTask = null;
     taskCollector.clear();
   }
 
@@ -60,14 +62,4 @@ class TaskCollectorTest {
     assertEquals(originalTaskCount - 1, finalTaskCount);
   }
 
-  @Test
-  void whenEditTask_thenEditDateIsAddedAndAfterCreatedDate() {
-
-    ToDoTask taskToEdit = taskCollector.getTaskByID(aTask.getID());
-    taskToEdit.editName("Now I am an edited task");
-
-    //mock
-    assertTrue(Objects.nonNull(taskToEdit.getLastEdit()));
-    assertTrue(taskToEdit.getLastEdit().isAfter(taskToEdit.getCreated()));
-  }
 }
