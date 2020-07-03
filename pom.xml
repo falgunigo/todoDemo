@@ -94,8 +94,28 @@
           <target>1.8</target>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>integrationTest</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>3.0.0-M5</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
