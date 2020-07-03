@@ -41,7 +41,4 @@ public class TaskCollector {
     return taskMap.get(taskID);
   }
 
-  public void removeTask(ToDoTask aTask) {
-//    taskList.
-  }
 }
