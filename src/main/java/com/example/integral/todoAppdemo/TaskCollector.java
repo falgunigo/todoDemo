@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class TaskCollector {
 
@@ -15,7 +14,7 @@ public class TaskCollector {
     taskMap.put(aTask.getID(), aTask);
   }
 
-  public Integer getTaskCount() {
+  Integer getTaskCount() {
     return taskMap.size();
   }
 
@@ -30,12 +29,6 @@ public class TaskCollector {
 
   public void clear() {
     taskMap.clear();
-  }
-
-  private void printTaskMap() {
-    System.out.println("Printing Task Map");
-    taskMap.entrySet().stream()
-        .forEach(item -> System.out.println(item.getKey() + item.getValue().getName()));
   }
 
   public ToDoTask getTaskByID(int taskID) {
