@@ -3,7 +3,20 @@ version: 2.1
 orbs:
   maven: circleci/maven@0.0.12
 
+jobs:
+  integrationTest:
+    machine:
+      image: ubuntu-1604:202004-01
+    steps:
+      - checkout
+      - run:
+          name: Integration Test
+          command: mvn clean verify -PintegrationTest
+
 workflows:
   maven_test:
     jobs:
       - maven/test # checkout, build, test, and upload test results
+  integrationTest:
+    jobs:
+      - integrationTest
