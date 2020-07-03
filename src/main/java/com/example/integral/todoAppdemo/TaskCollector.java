@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class TaskCollector {
 
@@ -41,4 +42,13 @@ public class TaskCollector {
     return taskMap.get(taskID);
   }
 
+  @Override
+  public String toString() {
+    String result = new String();
+    for (ToDoTask task : this.getAllTasks()) {
+      result+= String.format("ID: %s, Task: %s, Created: %s, Edited: %s", task.getID(), task.getName(), task.getCreated(), task.getLastEdit());
+      result += "\n";
+    }
+    return result;
+  }
 }

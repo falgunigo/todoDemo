@@ -34,10 +34,7 @@ public class TodoAppDemoApplication implements CommandLineRunner {
 
 	private void printTasks(TaskCollector taskCollector) {
 		System.out.println("Printing all the Tasks");
-		for (ToDoTask task : taskCollector.getAllTasks()) {
-			System.out
-					.println(String.format("ID: %s, Task: %s, Created: %s, Edited: %s", task.getID(), task.getName(), task.getCreated(), task.getLastEdit()));
-		}
+		System.out.println(taskCollector.toString());
 	}
 }
 
